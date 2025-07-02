@@ -2,12 +2,16 @@ import { useEffect, useState } from "react";
 import { ProdutoCard } from "@/components/ProdutoCard";
 import { type Produto } from "@/data/produtos";
 import axios from "axios";
+import dotenv from "dotenv";
+
+
+dotenv.config();
 
 export function ProdutoList() {
     const [produtos, setProdutos] = useState<Produto[]>([]);
 
     useEffect(() => {
-      axios.get<Produto[]>("http://localhost:3001/produtos")
+      axios.get<Produto[]>( process.env.BACKEND_CATALOGO_URL ||"http://localhost:3001/produtos")
           .then((response) => setProdutos(response.data))
           .catch((error) => console.error(error))
     }, []);

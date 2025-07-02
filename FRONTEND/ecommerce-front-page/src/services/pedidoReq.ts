@@ -3,10 +3,11 @@ import axios from "axios";
 
 
 
+
 export async function criarTransacaoPix(amount: number) {
     try {
         const response = await axios.post(
-            `http://localhost:3000/create-pix`, {amount}, {
+            process.env.BACKEND_GATEWAY_SERVICE_URL ||`http://localhost:3000/create-pix`, {amount}, {
                 headers: {
                     "Content-Type": "application/json",
                 }
