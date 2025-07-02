@@ -10,7 +10,7 @@ try {
 
     // Depois inicia o servidor
     app.listen(PORT, () => {
-        console.log(`🚀 API rodando em http://localhost:${PORT}`);
+        console.log(`🚀 API rodando na porta:${PORT}`);
     });
 } catch (err) {
     console.error('❌ Erro ao iniciar o servidor:', err);
