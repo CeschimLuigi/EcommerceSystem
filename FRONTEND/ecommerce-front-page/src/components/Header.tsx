@@ -1,4 +1,4 @@
-import { CarrinhoSidebar } from "./carrinhoSideBar.tsx";
+import { CarrinhoSidebar } from "@/components/CarrinhoSideBar";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { useState } from "react";
 

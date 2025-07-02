@@ -7,7 +7,7 @@ export function ProdutoList() {
     const [produtos, setProdutos] = useState<Produto[]>([]);
 
     useEffect(() => {
-      axios.get<Produto[]>("http://localhost:3000/produtos")
+      axios.get<Produto[]>("http://localhost:3001/produtos")
           .then((response) => setProdutos(response.data))
           .catch((error) => console.error(error))
     }, []);
