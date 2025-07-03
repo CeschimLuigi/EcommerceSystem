@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { ProdutoCard } from "@/components/ProdutoCard";
 import { type Produto } from "@/data/produtos";
 import axios from "axios";
-import * as process from "node:process";
 
 
 
 
+const apiUrl = import.meta.env.VITE_BACKEND_CATALOGO_URL;
 
 
 
@@ -14,7 +14,7 @@ export function ProdutoList() {
     const [produtos, setProdutos] = useState<Produto[]>([]);
 
     useEffect(() => {
-      axios.get<Produto[]>( process.env.BACKEND_GATEWAY_SERVICE_URL ||`http://localhost:3001/produtos`)
+      axios.get<Produto[]>( apiUrl  ||`http://localhost:3001/produtos`)
           .then((response) => setProdutos(response.data))
           .catch((error) => console.error(error))
     }, []);
